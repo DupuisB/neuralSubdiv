@@ -4,9 +4,9 @@ import os
 def main():
 
     data = {
-        "train_pkl": "./data_PKL/cartoon_elephant_train.pkl",
-        "valid_pkl": "./data_PKL/cartoon_elephant_valid.pkl",
-        "output_path": './jobs/net_cartoon_elephant/',
+        "train_pkl": "./data/data_PKL/cartoon_elephant_train.pkl",
+        "valid_pkl": "./data/data_PKL/cartoon_elephant_valid.pkl",
+        "output_path": './data/jobs/net_cartoon_elephant/',
         "epochs": 700, 
         "lr": 2e-3, 
         "device": 'cuda',
