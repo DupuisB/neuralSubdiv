@@ -67,14 +67,14 @@ class SubdNet(torch.nn.Module):
         # 3rd frame: edge normal (avg of face normals)
         vec1 = V[:,F[:,1],:] - V[:,F[:,0],:]
         vec2 = V[:,F[:,2],:] - V[:,F[:,0],:]
-        FN = torch.cross(vec1, vec2) # nF x 2 x 3
+        FN = torch.cross(vec1, vec2, dim = 2)
         FNnorm = torch.norm(FN, dim = 2)
         FN = FN / FNnorm.unsqueeze(2)
         eN = FN[:,0,:] + FN[:,1,:]
         b3 = eN / torch.norm(eN, dim = 1).unsqueeze(1)
 
         # 2nd frame: their cross product
-        b2 = torch.cross(b3, b1)
+        b2 = torch.cross(b3, b1, dim = 1)
 
         # concatenage all local frames
         b1 = b1.unsqueeze(1)

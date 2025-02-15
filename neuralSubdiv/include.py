@@ -293,7 +293,7 @@ class TestMeshes:
                 cIdx = torch.arange(hfIdx.size(0))
                 I = torch.cat([rIdx, cIdx], 0).reshape(2, -1)
                 val = torch.ones(hfIdx.size(0))
-                poolMat = torch.sparse.FloatTensor(I, val, torch.Size([nV, hfIdx.size(0)]))
+                poolMat = torch.sparse_coo_tensor(I, val, torch.Size([nV, hfIdx.size(0)]))
 
                 rowSum = torch.sparse.sum(poolMat, dim=1).to_dense()
 
@@ -462,7 +462,7 @@ def tgp_midPointUp(V, F, subdIter=1):
     i = torch.LongTensor(indices)
     v = torch.FloatTensor(values)
     shape = SSnp.shape
-    SS = torch.sparse.FloatTensor(i, v, torch.Size(shape))
+    SS = torch.sparse_coo_tensor(i, v, torch.Size(shape))
     return VV, FF, SS
 
 def random3DRotation():
