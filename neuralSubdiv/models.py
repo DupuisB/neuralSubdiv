@@ -1,4 +1,6 @@
+import torch
 from include import *
+
 
 class MLP(torch.nn.Module):
     # This is the MLP template for the Initialization, Vertex, Edge networks (see Table 2 in the appendix)

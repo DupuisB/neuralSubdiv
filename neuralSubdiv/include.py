@@ -1,19 +1,11 @@
 import os
 import sys
 
-cwd = os.getcwd()
-sys.path.append(cwd + '/pythongptoolbox/')
-sys.path.append(cwd + '/torchgptoolbox_nosparse/')
-
 # torch
 import torch
-import torchgptoolbox_nosparse as tgp
 
-# pygptoolbox
-from readOBJ import readOBJ
-from writeOBJ import writeOBJ
-from findIdx import findIdx
-from midPointUpsampling import midPointUpsampling
+import utils.torch_toolbox as tgp
+from utils.toolbox import readOBJ, writeOBJ, findIdx, midPointUpsampling
 
 # python standard 
 import numpy as np
