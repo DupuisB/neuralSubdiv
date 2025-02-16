@@ -142,7 +142,7 @@ class TrainMeshes:
                 cIdx = torch.arange(hfIdx.size(0))
                 I = torch.cat([rIdx, cIdx], 0).reshape(2, -1)
                 val = torch.ones(hfIdx.size(0))
-                poolMat = torch.sparse.FloatTensor(I, val, torch.Size([nV, hfIdx.size(0)]))
+                poolMat = torch.sparse_coo_tensor(I, val, torch.Size([nV, hfIdx.size(0)]))
 
                 rowSum = torch.sparse.sum(poolMat, dim=1).to_dense()
 

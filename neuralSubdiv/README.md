@@ -16,3 +16,4 @@ The next step is to use `python writeHyperparam.py` to create a folder that cont
 Then you can run `python train.py /path/to/model/folder/` to train the model. For instance, with the default folder generated with the above script, you can simply run `python train.py ./jobs/net_cartoon_elephant/` to train the model. After training, you can use the quick demo code `test.py` to test the model by running `python test.py /path/to/model/folder/ /path/to/testMesh.obj`.
 
 If any questions, please contact Hsueh-Ti Derek Liu (hsuehtil@cs.toronto.edu). 
+

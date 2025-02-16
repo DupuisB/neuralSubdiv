@@ -10,5 +10,6 @@ def main():
     S = TrainMeshes(mesh_folders)
 
     pickle.dump(S, file = open("./data_PKL/cartoon_elephant_train.pkl", "wb"))
+    
 if __name__ == '__main__':
     main()
